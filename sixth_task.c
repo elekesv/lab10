@@ -13,8 +13,21 @@ To printf 3 digits with leading zeros use %03d in the format string.
 
 #include <stdio.h>
 
-int main(){
+int seperator(int num){
+  if(num<=0)
+    return 0;
+  seperator(num/1000);
+  if(num<1000)
+    printf(" %d",num%1000);
+  else
+    printf(" %03d",num%1000);
 
+  
+return 0;
+}
+
+int main(){
+  seperator(10000600);
 
   return 0;
 }

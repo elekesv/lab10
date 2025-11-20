@@ -6,11 +6,21 @@ To print for example 1234 in base 10 numeral system first the 1234/10 (123) shou
 
 
 */
-
-
 #include <stdio.h>
 
+void printconvert(int num, int numeral){
+  if(num<numeral){
+    printf("%d",num);
+    return;
+  }
+  printconvert(num/numeral,numeral);
+  printf("%d", num%numeral);
+}
+
+
+
 int main(){
+  printconvert(725,10);
 
 
   return 0;

@@ -10,6 +10,7 @@ void print_string_1(char *text) {
     if (text[0] == '\0')
         return;
     putchar(text[0]);
+    printf("a");
     printf("%s", text + 1);     // !
 }
 

@@ -23,8 +23,28 @@ Complete the program to print the first 10 elements of the sequences! For arithm
 
 #include <stdio.h>
 
-int main(){
+int arithmetic(int n, int start, int diff){
+  if(n == 1)
+    return start;
+  else
+    return diff+arithmetic(n-1,start,diff);
+}
 
+int geometric(int n, int start, int diff){
+  if(n == 1)
+    return start;
+  else
+    return diff*geometric(n-1,start,diff);
+}
+
+int main(){
+  for(int i = 1; i<11; i++){
+    printf("%d\t", arithmetic(i,1,5));
+  }
+  printf("\n");
+  for(int n = 1; n<11; n++){
+    printf("%d\t", geometric(n,2,2));
+  }
 
   return 0;
 }
